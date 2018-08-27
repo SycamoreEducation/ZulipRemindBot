@@ -5,7 +5,7 @@ module ZulipRemindBot
     def create
       data = JSON.parse(request.raw_post)
 
-      head :unauthorized if data['token'] != ZulipRemindBot.token
+      return head :unauthorized if data['token'] != ZulipRemindBot.token
 
       Time.zone = ZulipRemindBot.tz
       Chronic.time_class = Time.zone
