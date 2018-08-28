@@ -26,7 +26,7 @@ module ZulipRemindBot
 
       human_time = time.strftime('%A, %b %e at %l:%M%p')
 
-      ZulipService.send(to, "Reminder scheduled for #{human_time}.")
+      ZulipService.send(@to, "Reminder scheduled for #{human_time}.")
 
       head :no_content
     end
